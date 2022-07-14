@@ -60,5 +60,20 @@ class MainActivity : AppCompatActivity() {
             dialog2.show()
         }
 
+        //Dialog 3
+        val dialog3 = AlertDialog.Builder(this)
+            .setTitle("Dialog 3's' title")
+            .setIcon(R.drawable.ic_launcher_foreground)
+            .setMultiChoiceItems(options, booleanArrayOf(false, false, false)) { _, i, isChecked ->
+
+                if (isChecked) {
+                    Toast.makeText(this, "checked ${options[i]}", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+            .setPositiveButton("Okay") { _, _ -> }.setNegativeButton("Cancel") { _, _ -> }.create()
+        btn3.setOnClickListener {
+            dialog3.show()
+        }
     }
 }
